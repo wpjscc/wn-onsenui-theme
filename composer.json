@@ -1,0 +1,11 @@
+{
+    "name": "wpjscc/wn-onsenui-theme",
+    "type": "winter-theme",
+    "authors": [
+        {
+            "name": "wpjscc",
+            "email": "wpjscc@gmail.com"
+        }
+    ],
+    "require": {}
+}

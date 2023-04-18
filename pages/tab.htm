@@ -1,0 +1,58 @@
+title = "Tab"
+url = "/tab"
+layout = "default"
+==
+
+<ons-page>
+  <ons-toolbar>
+      <div class="left">
+          <ons-toolbar-button icon="md-face"></ons-toolbar-button>
+      </div>
+      <div class="center">My app</div>
+      <div class="right">
+          <ons-toolbar-button>
+              <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+  <ons-tabbar swipeable position="bottom">
+    <ons-tab page="tab1.html" label="Tab 1" icon="ion-ios-home, material:md-home" badge="7" active>
+    </ons-tab>
+    <ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
+    </ons-tab>
+  </ons-tabbar>
+</ons-page>
+
+<template id="tab1.html">
+  <ons-page id="Tab1">
+    <div x-data="{open:false}">
+        <ons-button @click="ons.notification.alert('Hello world!');">Click me!</ons-button>
+        <ons-button  x-init="console.log('hello world')" @click="open=!open">Click me!</ons-button>
+
+        <p style="text-align: center;" x-show="open">
+            This is the first page.
+        </p>
+    <div>
+    <div x-data="{ expanded: false }" class="demo">
+        <button @click="expanded = ! expanded">Toggle Content</button>
+
+        <div x-show="expanded" x-collapse="" style="height: auto;">
+            <div class="pt-4">
+                Reprehenderit eu excepteur ullamco esse cillum reprehenderit exercitation labore non. Dolore dolore ea dolore veniam sint in sint ex Lorem ipsum. Sint laborum deserunt deserunt amet voluptate cillum deserunt. Amet nisi pariatur sit ut id. Ipsum est minim est commodo id dolor sint id quis sint Lorem.
+            </div>
+        </div>
+    </div>
+   
+  </ons-page>
+</template>
+
+<template id="tab2.html">
+  <ons-page id="Tab2" x-data="{open:false}">
+    <ons-button  x-init="console.log('hello world11')" @click="open=!open">Click me!</ons-button>
+
+    <p style="text-align: center;" x-show="open">
+      This is the second page2.
+    </p>
+  </ons-page>
+</template>

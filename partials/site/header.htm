@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% placeholder page_title default %}{{ this.page.title }}{% endplaceholder %}</title>
+        {% partial "meta/styles" %}
+        {% partial "meta/seo" %}
+        <script src="{{ [
+            'assets/js/onsenui.min.js',
+            'assets/js/onsenui.js'
+        ] | theme }}"></script>
+
+        <script src="{{ [
+            '/assets/js/alpinejs-plugin/persist.js',
+            '/assets/js/alpinejs-plugin/intersect.js',
+            '/assets/js/alpinejs-plugin/collapse.js',
+            '/assets/js/alpinejs.js',
+            '/assets/js/alpinejs-app.js',
+        ] | theme }}" defer></script>
+        
+        <meta name="generator" content="Winter CMS">
+    </head>
+    {% set pageId = this.page.id %}
+    {% set pageTitle = this.page.title %}
+    {% if pageId is empty %}
+        {% set pageId = page.id %}
+    {% endif %}
+    {% if pageTitle is empty %}
+        {% set pageTitle = page.title %}
+    {% endif %}
+    <body class="page-{{ pageId }} layout-{{ this.layout.id }}">
